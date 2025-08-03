@@ -4,134 +4,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ye Bot - Copyright Notice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
     <style>
-        /* Basic styles to match the aesthetic */
         body {
-            background-color: #000000;
-            color: #FFFFFF;
-            font-family: 'Montserrat', sans-serif; /* A good, clean font similar to the original */
-            padding: 40px;
-            max-width: 900px;
-            margin: auto;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a, #000000);
+            color: #e0e0e0;
+            line-height: 1.8;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            box-sizing: border-box;
+            -webkit-user-select: auto;
+            -moz-user-select: auto;
+            -ms-user-select: auto;
+            user-select: auto;
         }
+        ::selection { background-color: #FFD700; color: #111111; }
+        ::-moz-selection { background-color: #FFD700; color: #111111; }
+        ::-webkit-scrollbar { width: 12px; }
+        ::-webkit-scrollbar-track { background: #1a1a1a; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: #3a3a3a; border-radius: 10px; border: 3px solid #1a1a1a; }
+        ::-webkit-scrollbar-thumb:hover { background: #4a4a4a; }
         .container {
-            text-align: left;
+            background-color: #111111;
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 75px rgba(0, 0, 0, 0.9);
+            padding: 5rem;
+            width: 100%;
+            max-width: 1000px;
+            border: 2px solid #333333;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
         }
-        h1, h2 {
-            color: #E0BE36; /* The specific gold color */
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 700;
+        .container:hover {
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.95);
+            transform: translateY(-5px);
         }
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 15% 25%, rgba(255, 215, 0, 0.03) 0%, transparent 40%),
+                        radial-gradient(circle at 85% 75%, rgba(255, 165, 0, 0.03) 0%, transparent 40%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .content-wrapper { position: relative; z-index: 1; }
         h1 {
-            font-size: 1.5em;
-            margin-bottom: 5px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 5.5rem;
+            font-weight: 900;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+            letter-spacing: 0.05em;
+            line-height: 1;
+            background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGlow 2s infinite alternate;
+        }
+        @keyframes textGlow {
+            from { text-shadow: 0 0 15px rgba(255, 215, 0, 0.3), 0 0 25px rgba(255, 165, 0, 0.3); }
+            to { text-shadow: 0 0 25px rgba(255, 215, 0, 0.6), 0 0 40px rgba(255, 165, 0, 0.6); }
         }
         h2 {
-            font-size: 1.1em;
-            text-align: left;
-            margin-top: 40px;
-            margin-bottom: 20px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-top: 4.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 4px solid #FFD700;
+            padding-bottom: 1rem;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+            letter-spacing: 0.03em;
+            position: relative;
         }
-        .last-updated {
-            text-align: center;
-            color: #AAAAAA;
-            margin-bottom: 40px;
-            font-size: 0.9em;
-        }
-        p {
-            line-height: 1.6;
-            font-size: 1em;
-        }
-        hr {
-            border: 0;
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -7px;
+            left: 0;
+            width: 100%;
             height: 1px;
-            background: #E0BE36;
-            margin: 30px 0;
+            background: linear-gradient(to right, #FFA500, transparent);
         }
-        .list-item {
-            margin-bottom: 15px;
+        p { margin-bottom: 1.5rem; color: #c0c0c0; }
+        ul { list-style: none; padding-left: 0; margin-bottom: 2rem; }
+        ul li { margin-bottom: 0.8rem; position: relative; padding-left: 2rem; color: #d0d0d0; }
+        ul li::before {
+            content: '✨';
+            color: #FFD700;
+            position: absolute;
+            left: 0;
+            font-size: 1.3em;
+            line-height: 1;
+            top: 0.1em;
         }
-        .list-item strong {
-            color: #E0BE36;
-        }
-        .button-container {
+        strong { color: #FFD700; font-weight: 800; }
+        .last-updated { text-align: center; font-size: 1rem; color: #909090; margin-top: 0.5rem; margin-bottom: 2.5rem; font-weight: 300; }
+        .footer { text-align: center; font-size: 0.9rem; color: #606060; margin-top: 5rem; padding-top: 2rem; border-top: 1px solid #2a2a2a; }
+        .nav-link {
+            display: block;
             text-align: center;
-            margin-top: 40px;
-        }
-        .nav-button {
-            display: inline-block;
-            padding: 12px 24px;
-            margin: 0 10px;
-            border: 2px solid #E0BE36;
-            border-radius: 5px;
-            color: #E0BE36;
-            background-color: transparent;
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #FFD700;
             text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: background-color 0.3s, color 0.3s;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid #FFD700;
+            border-radius: 0.75rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
         }
-        .nav-button:hover {
-            background-color: #E0BE36;
-            color: #000000;
+        .nav-link:hover {
+            background-color: #FFD700;
+            color: #111111;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+            transform: translateY(-3px);
         }
-
+        .link-container { margin-top: 3rem; }
+        @media (max-width: 1024px) { .container { padding: 4rem; } h1 { font-size: 4.5rem; } h2 { font-size: 2.5rem; } }
+        @media (max-width: 768px) { .container { padding: 3rem 2rem; border-radius: 1rem; } h1 { font-size: 3.5rem; } h2 { font-size: 2.2rem; } body { padding: 2rem 1rem; } }
+        @media (max-width: 480px) { .container { padding: 2rem 1rem; border-radius: 0.75rem; } h1 { font-size: 2.5rem; } h2 { font-size: 1.8rem; } body { padding: 1rem; } }
     </style>
-    <!-- You can link to Google Fonts for Montserrat -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>YE BOT - COPYRIGHT NOTICE</h1>
-        <p class="last-updated">Last Updated: August 3, 2025</p>
-        <!-- INTRO REVERTED TO TEAM NAME -->
-        <p>This document outlines the intellectual property rights and copyright protection for Ye Bot. All aspects of the bot, including its code and brand, are the exclusive property of the <strong>ac447724</strong> development team.</p>
-        
-        <hr>
+        <div class="content-wrapper">
+            <h1>Ye Bot - Copyright Notice</h1>
+            <p class="last-updated">Last Updated: August 3, 2025</p>
 
-        <h2>1. SCOPE OF COPYRIGHT</h2>
-        <!-- SCOPE REVERTED TO TEAM NAME -->
-        <p>The copyright for Ye Bot covers all original work created by the <strong>ac447724</strong> team, including but not limited to:</p>
-        <div class="list-item">
-            <p>✨ <strong>Source Code:</strong> The entire codebase, including all files, algorithms, and logic that powers the bot's functionality, is proprietary and confidential.</p>
-        </div>
-        <div class="list-item">
-            <p>✨ <strong>Brand & Assets:</strong> The name "Ye Bot", its associated logos, icons, and any unique graphical elements are protected trademarks and creative assets.</p>
-        </div>
-        <div class="list-item">
-            <p>✨ <strong>Functionality & Features:</strong> The unique combination, implementation, and presentation of commands and features constitute a protected creative work.</p>
-        </div>
+            <p>This document outlines the intellectual property rights and copyright protection for Ye Bot. All aspects of the bot, including its code and brand, are the exclusive property of the <strong>ac447724</strong> development team.</p>
 
-        <hr>
+            <h2>1. Scope of Copyright</h2>
+            <p>The copyright for Ye Bot covers all original work created by the <strong>ac447724</strong> team, including but not limited to:</p>
+            <ul>
+                <li><strong>Source Code:</strong> The entire codebase, including all files, algorithms, and logic that powers the bot's functionality, is proprietary and confidential.</li>
+                <li><strong>Brand & Assets:</strong> The name "Ye Bot", its associated logos, icons, and any unique graphical elements are protected trademarks and creative assets.</li>
+                <li><strong>Functionality & Features:</strong> The unique combination, implementation, and presentation of commands and features constitute a protected creative work.</li>
+            </ul>
 
-        <h2>2. PROHIBITED ACTIONS</h2>
-        <p>The following actions are strictly prohibited and constitute a violation of copyright and intellectual property rights:</p>
-        <div class="list-item">
-            <p>✨ <strong>Unauthorized Copying & Distribution:</strong> You may not copy, share, sell, or redistribute the bot's source code in any form.</p>
-        </div>
-        <div class="list-item">
-            <p>✨ <strong>Reverse Engineering:</strong> You may not decompile, disassemble, or otherwise attempt to reverse-engineer the bot to recreate its source code.</p>
-        </div>
-        <div class="list-item">
-            <p>✨ <strong>Brand Impersonation:</strong> You may not use the "Ye Bot" name, logo, or a confusingly similar likeness to create or promote another bot or service.</p>
-        </div>
-        
-        <hr>
-        
-        <!-- OWNERSHIP SECTION REVERTED TO TEAM NAME -->
-        <h2>3. OWNERSHIP & INQUIRIES</h2>
-        <p>Ye Bot is the proprietary work of the <strong>ac447724</strong> team. For official inquiries regarding copyright, licensing, or permissions, please contact the team's designated representative, <strong>virtue.fu</strong> (Discord User ID: 1000483610190675988).</p>
-        
-        <hr>
+            <h2>2. Prohibited Actions</h2>
+            <p>The following actions are strictly prohibited and constitute a violation of copyright and intellectual property rights:</p>
+            <ul>
+                <li><strong>Unauthorized Copying & Distribution:</strong> You may not copy, share, sell, or redistribute the bot's source code in any form.</li>
+                <li><strong>Reverse Engineering:</strong> You may not decompile, disassemble, or otherwise attempt to reverse-engineer the bot to recreate its source code.</li>
+                <li><strong>Brand Impersonation:</strong> You may not use the "Ye Bot" name, logo, or a confusingly similar likeness to create or promote another bot or service.</li>
+            </ul>
 
-        <div class="button-container">
-            <a href="https://ac447724.github.io/Ye-Bot-TOS/" target="_blank" class="nav-button">Terms of Service</a>
-            <a href="https://ac447724.github.io/Ye-Bot-Privacy-Policy/" target="_blank" class="nav-button">Privacy Policy</a>
+            <h2>3. Ownership & Inquiries</h2>
+            <p>Ye Bot is the proprietary work of the <strong>ac447724</strong> team. For official inquiries regarding copyright, licensing, or permissions, please contact the team's designated representative, <strong>virtue.fu</strong> (Discord User ID: 1000483610190675988).</p>
+            
+            <div class="link-container">
+                <a href="https://ac447724.github.io/Ye-Bot-TOS/" target="_blank" class="nav-link">View Terms of Service</a>
+                <a href="https://ac447724.github.io/Ye-Bot-Privacy-Policy/" target="_blank" class="nav-link">View Privacy Policy</a>
+            </div>
+
+        </div>
+        <div class="footer">
+            © 2025 ac447724 / Ye Bot. All rights reserved.
         </div>
     </div>
 </body>
